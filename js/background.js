@@ -6,9 +6,48 @@
 
 chrome.runtime.onInstalled.addListener( function ()
 {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-        console.log('The color is green.');
-    });
+    let _colors = [
+        "rgba(197, 34, 51, 1)",
+        "rgba(248, 216, 0,1)",
+        "rgba(0,160,0,1)",
+        "rgba(0,0,160,1)",
+    ];
+
+    _colors.forEach( function ( v, i, a )
+    {
+        let _temp_name = "bg-color-" + i;
+        //  console.debug( i,_temp_name, v);
+
+        chrome.storage.local.set(
+            {
+                [_temp_name]: v
+            },
+            function()
+            {
+                console.log( "Colors being set.", [_temp_name], v );
+                return;
+            }
+        );
+
+        //chrome.storage.local.get( [_temp_name], function ( data ) 
+        //{
+        //    console.debug( "AFTER SETTING: chrome.storage.sync.get", data[_temp_name] );
+        //    return;
+        //});
+
+        return;
+    } );
+
+
+    //chrome.storage.sync.set(
+    //    {
+    //        color: "rgba(0,160,0,1)"
+    //    },
+    //    function ()
+    //    {
+    //        console.log( 'The color is green.' );
+    //    }
+    //);
 
     //chrome.runtime.onInstalled.addListener( function ( details ) 
     //{

@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Build an Extension!",
     "permissions": [ "activeTab", "declarativeContent", "storage" ],
-    "options_page": "options.html",
+    "options_page": "js/options.html",
     "background": {
         "scripts": [ "js/background.js" ],
         "persistent": false
