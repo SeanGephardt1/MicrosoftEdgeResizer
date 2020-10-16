@@ -3,21 +3,32 @@
     "author": "Sean Gephardt",
     "description": "Resizer allows a user to change the size of thier Microsoft Edge (Chromium) desktop browser",
     "version": "0.5",
+    "manifest_version": 2,
     "icons": {
-        "25": "images/color-changer25.png",
-        "48": "images/color-changer48.png"
+        "16": "img/resizer-16.jpg",
+        "24": "img/resizer-24.jpg",
+        "32": "img/resizer-32.jpg",
+        "64": "img/resizer-64.jpg",
+        "96": "img/resizer-96.jpg",
+        "128": "img/resizer-128.jpg"
     },
-    "manifest_version": 3,
     "permissions": [
         "*://docs.microsoft.com/*",
         "tabs"
     ], 
     "browser_action": {
-        "default_title": "Color Changer",
-        "default_popup": "popup.html",
-        default_icon": {
-            "20": "images/color-changer20.png",
-            "40": "images/color-changer40.png"
-        },
-    }
+        "default_title": "Edge Resizer",
+        "default_popup": "resizer.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+              "<all_urls>"
+            ],
+            "js": ["js/content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        "img/*.jpg"
+    ]
 }
