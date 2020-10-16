@@ -29,25 +29,15 @@ chrome.runtime.onInstalled.addListener( function ()
             }
         );
 
-        //chrome.storage.local.get( [_temp_name], function ( data ) 
-        //{
-        //    console.debug( "AFTER SETTING: chrome.storage.sync.get", data[_temp_name] );
-        //    return;
-        //});
+        chrome.storage.local.get( [_temp_name], function ( data ) 
+        {
+            console.debug( "AFTER SETTING: chrome.storage.sync.get", data[_temp_name] );
+            return;
+        });
 
         return;
     } );
 
-
-    //chrome.storage.sync.set(
-    //    {
-    //        color: "rgba(0,160,0,1)"
-    //    },
-    //    function ()
-    //    {
-    //        console.log( 'The color is green.' );
-    //    }
-    //);
 
     //chrome.runtime.onInstalled.addListener( function ( details ) 
     //{
@@ -64,14 +54,27 @@ chrome.runtime.onInstalled.addListener( function ()
     {
             chrome.declarativeContent.onPageChanged.addRules([{
             conditions: [new chrome.declarativeContent.PageStateMatcher({
-                pageUrl: {
-                    hostEquals: 'localhost',
-                    schemes: ['https', 'http']
-               },
+                pageUrl: {},
           })],
           actions: [new chrome.declarativeContent.ShowPageAction()]
         }]);
     } );
+
+
+
+    //chrome.declarativeContent.onPageChanged.removeRules( undefined, function ()
+    //{
+    //        chrome.declarativeContent.onPageChanged.addRules([{
+    //        conditions: [new chrome.declarativeContent.PageStateMatcher({
+    //            pageUrl: {
+    //                hostEquals: 'localhost',
+    //                schemes: ['https', 'http']
+    //           },
+    //      })],
+    //      actions: [new chrome.declarativeContent.ShowPageAction()]
+    //    }]);
+    //} );
+
 
 
     return;
