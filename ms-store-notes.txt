@@ -1,0 +1,17 @@
+﻿URL
+
+Store ID	0RDCKG31VZL8
+
+CRX ID	pbpjmfkolgaahmcemfgolhjhebioealk
+
+Public key
+
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxK0xl4dXOiCRVVIL8MTm
+rtTV2fxpSR8Y/zwjur+neoO1KDU8GZm4xHQBYAnES3B0ePdcj8ULh7VUn6COrFFF
+kvYtIh+tOg2Cf0HaE7wOv0uG/qHw5EW+uE09eITWgCF+lpVu4bHgH47xn6i6Ch/S
+Bsy+vcosNxolHsrdbDcRhqnpL0mZG+tdz+AisCekMOUXwSL6S9hkfviMw1Kk7yxx
+q78tbbKnaJWGCWdkjtoziv6CzHpMS8GFxjvYluG0KxYiyo/6mj7BhrQnBQypsJAJ
+Z8YlWD3EK04m/NTp7maCBoYil7A/j0aTrwhEL4Qmtphwc+TkQhxlOCM66UpAK3+1
+FQIDAQAB
+-----END PUBLIC KEY-----
