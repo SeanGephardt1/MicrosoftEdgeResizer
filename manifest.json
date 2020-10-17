@@ -1,7 +1,7 @@
 ﻿{
     "name": "Sean's hacked Getting Started Example",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Resize Microsoft Edge or Google Chrome desktop browsers",
     "permissions": [ "activeTab", "declarativeContent", "storage" ],
     "options_page": "js/options.html",
     "background": {
