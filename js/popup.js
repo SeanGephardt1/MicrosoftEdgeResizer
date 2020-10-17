@@ -3,35 +3,8 @@
 'use strict';
 
 function Init_Buttons()
-{   console.debug( "Init_Buttons" );
-
-    //let _btns = document.getElementsByClassName( "rs-btn" );
-
-    //for ( let i = 0; i < _btns.length; i++ )
-    //{   //  console.debug( i, _btns[i] );
-    //    let _data_name = "bg-color-" + i;
-
-    //    chrome.storage.local.get( [_data_name], function ( data ) 
-    //    {
-    //        //  console.debug( "chrome.storage.sync.get", data[_data_name] );
-    //        _btns[i].style.backgroundColor = data[_data_name];
-    //        _btns[i].setAttribute( 'value', data[_data_name] );
-    //        _btns[i].onclick = function ( element )
-    //        {   //  console.debug( "_btns[i].onclick",element.target.value);
-    //            chrome.tabs.query( { active: true, currentWindow: true }, function ( tabs )
-    //            {
-    //                chrome.tabs.executeScript(
-    //                    tabs[0].id,
-    //                    { code: 'document.body.style.backgroundColor = "' + element.target.value + '";' } );
-    //            } );
-    //            return;
-    //        };
-    //        return;
-    //    });
-    //}
-
-
-
+{
+    //  console.debug( "Init_Buttons" );
     const _browser_sizes = [
         { name: "2560 x 1440", w: 2560, h: 1440 },
         { name: "1920 x 1400", w: 1920, h: 1400 },
@@ -59,33 +32,25 @@ function Init_Buttons()
         element.setAttribute( 'value', i );
         element.onclick = function ( element )
         {
-            //console.debug( "element.onclick", element.target.value );
-            //console.debug( "window.screen", window.screen );
-
             let _selected_size = _browser_sizes[element.srcElement.value];
-            //  console.debug( "_selected_size", _selected_size.h );
-
-
             let _new_top = parseInt( window.screen.availHeight / 2 + window.screen.availTop) - parseInt( _selected_size.h / 2 );
-            //  console.debug( "_new_top", _new_top);
 
             let _new_left = ( parseInt( window.screen.availWidth / 2 ) - parseInt( _selected_size.w / 2 ) );
             let _new_width = _selected_size.w;
             let _new_height = _selected_size.h;
 
-            chrome.windows.update( chrome.windows.WINDOW_ID_CURRENT,
-                    {
-                        top: _new_top,
-                        left: _new_left,
-                        width: _new_width,
-                        height: _new_height,
-                        focused: true,
-                        drawAttention: false
+            chrome.windows.update(
+                chrome.windows.WINDOW_ID_CURRENT,
+                {
+                    top: _new_top,
+                    left: _new_left,
+                    width: _new_width,
+                    height: _new_height,
+                    focused: true,
+                    drawAttention: false,
+                    state: "normal"
                 },
-                function ( callbackData ) {
-                    //  console.debug( "callbackData", callbackData );
-                    return;
-                }
+                function ( callbackData ) { return; }
             );
 
             return;
@@ -96,35 +61,6 @@ function Init_Buttons()
         let _btn_panel = document.getElementById( "resizer-button-panel" );
         _btn_panel.appendChild( element ); 
     }
-
-
-    //_resize_btn.onclick = function ( element )
-    //{
-    //    console.debug( "_resize_btn.onclick", element.srcElement.value );
-
-    //    let _new_top = parseInt( window.screen.availHeight / 2 + window.screen.availTop) - parseInt( _selected_size.h / 2 );
-    //    //  console.debug( "_new_top", _new_top);
-
-    //    let _new_left = ( parseInt( window.screen.availWidth / 2 ) - parseInt( _selected_size.w / 2 ) );
-    //    let _new_width = _selected_size.w;
-    //    let _new_height = _selected_size.h;
-
-    //    chrome.windows.update( chrome.windows.WINDOW_ID_CURRENT,
-    //            {
-    //                top: _new_top,
-    //                left: _new_left,
-    //                width: _new_width,
-    //                height: _new_height,
-    //                focused: true,
-    //                drawAttention: false
-    //        },
-    //        function ( callbackData ) {
-    //            //  console.debug( "callbackData", callbackData );
-    //            return;
-    //        }
-    //    );
-    //    return;
-    //};
 
     return;
 };
